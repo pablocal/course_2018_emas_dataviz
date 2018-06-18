@@ -9,7 +9,7 @@
 #install.packages("sjmisc")
 #install.packages("tidyverse")
 #install.packages("ggthemes")
-#install.packages("grid")
+#install.packages("gridExtra")
 
 library(sjmisc)
 library(tidyverse)
@@ -43,18 +43,18 @@ frq(d$urnas16r)
 
 
 #G1.a) Set-up ggplot
-g1 <- ggplot(d, aes(x = ___, y = ____))
+g1 <- ggplot(d, aes(x = as.numeric(___), y = ____))
 g1 
 
 #G1.b) Añadir geoms: barras
 g1 <- g1 + ________________________________
 g1
 
-#G1.c) Añadir geoms: líneas de densidad
+#G1.c) Añadir geoms: línea de ajuste
 g1 <- g1 + _____________________
 g1
 
-#G1.d) Modificar leyenda
+#G1.d) Incluir facets
 g1 <- g1 + ____________________
 g1
 

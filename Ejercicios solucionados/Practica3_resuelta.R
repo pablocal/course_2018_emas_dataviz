@@ -46,7 +46,7 @@ g1 <- g1 + geom_point()
 g1
 
 #G1.d) set-up el plot (data + aes) subsetting data para excluir NA
-g1b <- ggplot(filter(d, !is.na(urnas16r)), aes(x=confpub, y=confpriv, col=urnas16r))
+g1b <- ggplot(filter(d, !is.na(urnas16r), urnas16r != "NC"), aes(x=confpub, y=confpriv, col=urnas16r))
 g1b 
 
 #G1.e) añadir geom (scatter)
@@ -68,7 +68,6 @@ g1b
 #G1.i) modificar títulos ejes, título y título leyenda
 g1b <- g1b + labs(x= "Confianza instituciones privadas", y="Confianza en instituciones públicas", col="Elecciones 2016", title="G1. Confianza instituciones públicas y privadas" )
 g1b
-
 
 ###########################################################
 ###########################################################
@@ -184,7 +183,7 @@ g5 <- g5 + stat_summary(fun.data = mean_cl_normal)
 g5
 
 #G5.d) Límites eje x (0 a 30)
-g5 <- g5 + scale_y_continuous(limits = c(0, 15), breaks = c(0,5,10,15))
+g5 <- g5 + coord_cartesian(ylim = c(0, 15))
 g5
 
 #G5.e) Etiquetas

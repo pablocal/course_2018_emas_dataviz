@@ -6,16 +6,16 @@
 #1. Cargar (e instala si es necesario) los paquetes que vas a utilizar
 
 #install.packages("tidyverse")
-#install.packages("descr")
+#install.packages("sjmisc")
 #install.packages("foreign")
 
 library(tidyverse)
-library(descr)
+library(sjmisc)
 
 #2. Limpia espacio y establece directorio de trabajo
 rm(list=ls())
 
-setwd("***PONER TU RUTA AQUÍ***") #Aquí deberás poner todos los datos
+setwd("AQUÍ TU RUTA") #Aquí deberás poner todos los datos
 getwd()
 
 #3. Crear vectores.

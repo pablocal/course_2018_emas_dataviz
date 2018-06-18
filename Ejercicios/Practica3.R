@@ -175,7 +175,7 @@ g5 <- g5 + stat_summary(________________)
 g5
 
 #G5.d) Límites eje x (0 a 30)
-g5 <- g5 + scale_y_continuous(limits = c(__, __), breaks = c(_, _, __,  __))
+g5 <- g5 + coord_cartesian(ylim = c(__, __))
 g5
 
 #G5.e) Etiquetas

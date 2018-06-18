@@ -9,7 +9,7 @@
 #install.packages("sjmisc")
 #install.packages("tidyverse")
 #install.packages("ggthemes")
-#install.packages("grid")
+#install.packages("gridExtra")
 
 library(sjmisc)
 library(tidyverse)
@@ -43,18 +43,18 @@ frq(d$urnas16r)
 
 
 #G1.a) Set-up ggplot
-g1 <- ggplot(d, aes(x = edad, y = confpub))
+g1 <- ggplot(d, aes(x = as.numeric(edad), y = confpub))
 g1 
 
 #G1.b) Añadir geoms: barras
 g1 <- g1 + geom_point(position="jitter", alpha=.3, shape=1)
 g1
 
-#G1.c) Añadir geoms: líneas de densidad
+#G1.c) Añadir geoms: líneas de ajuste
 g1 <- g1 + geom_smooth(method="lm")
 g1
 
-#G1.d) Modificar leyenda
+#G1.d) Incluir facets
 g1 <- g1 + facet_wrap( ~ esta)
 g1
 
@@ -97,7 +97,7 @@ g2d <- g2 + geom_bar(position="fill") +
 g2d
 
 #G2.e) Añadir etiquetas
-g2comb <- grid.arrange(g2a, g2b, g2c, g2d, ncol=2, top=textGrob("G4. Voto en 2016 por estatus social "))
+g2comb <- grid.arrange(g2a, g2b, g2c, g2d, ncol=2, top = quote("G4. Voto en 2016 por estatus social "))
 g2comb
 
 ###########################################################
